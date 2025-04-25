@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/akira'
+let g:netrw_dirhist_1='/home/akira/projects/other/gcc/gcc/c'
+let g:netrw_dirhist_0='/home/akira/projects/other/gcc/gcc'
+let g:netrw_dirhist_9='/home/akira/projects/other/gcc'
+let g:netrw_dirhist_8='/home/akira/projects/other/gcc/gcc'
+let g:netrw_dirhist_7='/home/akira/projects/other/gcc'
+let g:netrw_dirhist_6='/home/akira/projects/other/gcc/config'
+let g:netrw_dirhist_5='/home/akira/projects/other/gcc'
+let g:netrw_dirhist_4='/home/akira/projects/other'
+let g:netrw_dirhist_3='/home/akira/projects'
