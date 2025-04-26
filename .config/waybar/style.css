@@ -1,0 +1,102 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: #282828;
+    color: #fbf1c7;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #fbf1c7;
+}
+
+#workspaces button.active {
+    border-bottom: 3px solid #fe8019;
+}
+
+#workspaces button.urgent {
+    background-color: #A54242;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: #282828;
+}
+
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#battery,
+#clock,
+#backlight,
+#custom-powermenu {
+    padding: 0 10px;
+}
+
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#battery,
+#clock {
+    border-bottom: 3px solid #fe8019;
+}
+
+/* Module-specific colors */
+#custom-powermenu {
+    color: #fe8019;
+}
+
+#backlight {
+    color: #fe8019;
+}
+
+#pulseaudio {
+    color: #fe8019;
+}
+
+#network {
+    color: #fe8019;
+}
+
+#cpu {
+    color: #fe8019;
+}
+
+#memory {
+    color: #fe8019;
+}
+
+#battery {
+    color: #fe8019;
+}
+
+#clock {
+    color: #fe8019;
+}
+
+/* Progress bars for volume and backlight */
+#pulseaudio.muted {
+    color: #665c54;
+}
+
+/* Battery states */
+#battery.charging {
+    color: #98971a;
+}
+
+#battery.warning:not(.charging) {
+    color: #d79921;
+}
+
+#battery.critical:not(.charging) {
+    color: #cc241d;
+}

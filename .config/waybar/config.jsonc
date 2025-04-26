@@ -1,0 +1,67 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "width": "85%",
+    "margin-left": "7.5%",
+    "margin-right": "7.5%",
+    "modules-left": ["custom/powermenu", "backlight", "pulseaudio"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["network", "cpu", "memory", "battery", "clock"],
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+    "backlight": {
+        "format": "󰖨 {percent}%",
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+
+    "pulseaudio": {
+        "format": "墳 {volume}%",
+        "format-muted": "婢 muted",
+        "on-click": "pavucontrol"
+    },
+
+    "network": {
+        "format-wifi": "󰤨 {essid}",
+        "format-disconnected": "󰤭 disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 2
+    },
+
+    "memory": {
+        "format": " {percentage}%",
+        "interval": 2
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰂎", "󰁻", "󰁾", "󰂀", "󰁹"],
+        "format-charging": "󰢝 {capacity}%",
+        "interval": 30,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        }
+    },
+
+    "clock": {
+        "format": " {:%I:%M %p}",
+        "format-alt": " {:%a • %d.%m.%Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "custom/powermenu": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    }
+}
