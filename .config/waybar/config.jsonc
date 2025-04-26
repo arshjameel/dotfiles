@@ -1,49 +1,59 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 24,
-    "width": "85%",
-    "margin-left": "7.5%",
-    "margin-right": "7.5%",
+    "height": 26,
+    "width": "100%",
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 10,
     "modules-left": ["custom/powermenu", "backlight", "pulseaudio"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["network", "cpu", "memory", "battery", "clock"],
 
     "hyprland/workspaces": {
+        "all-outputs": false,
+        "active-only": "false",
         "format": "{name}",
         "on-click": "activate"
     },
 
     "backlight": {
-        "format": "󰖨 {percent}%",
-        "on-scroll-up": "brightnessctl set +5%",
-        "on-scroll-down": "brightnessctl set 5%-"
+        "format": "󰖨 <b>{percent}%</b>",
+        "on-scroll-up": "brightnessctl set +10%",
+        "on-scroll-down": "brightnessctl set 10%-"
     },
 
     "pulseaudio": {
-        "format": "墳 {volume}%",
-        "format-muted": "婢 muted",
+        "format": "墳 <b>{volume}%</b>",
+        "format-muted": "婢 <b>muted</b>",
         "on-click": "pavucontrol"
     },
 
     "network": {
-        "format-wifi": "󰤨 {essid}",
+        "format-wifi": "󰤨 <b>{essid}</b>",
+        "format-ethernet": "󪥈 <b>Ethernet</b>",
         "format-disconnected": "󰤭 disconnected",
+        "tooltip": true,
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
     },
 
     "cpu": {
-        "format": " {usage}%",
-        "interval": 2
+        "format": " <b>{usage}%</b>",
+        "interval": 5,
+        "max-length": 10,
+        "on-click": "",
+        "tooltip": false
     },
 
     "memory": {
-        "format": " {percentage}%",
-        "interval": 2
+        "format": " <b>{used}G</b>",
+        "interval": 5,
+        "max-length": 10,
+        "tooltip": false
     },
 
     "battery": {
-        "format": "{icon} {capacity}%",
+        "format": "{icon} <b>{capacity}%</b>",
         "format-icons": ["󰂎", "󰁻", "󰁾", "󰂀", "󰁹"],
         "format-charging": "󰢝 {capacity}%",
         "interval": 30,
@@ -54,13 +64,13 @@
     },
 
     "clock": {
-        "format": " {:%I:%M %p}",
-        "format-alt": " {:%a • %d.%m.%Y}",
+        "format": " <b>{:%I:%M %p}</b>",
+        "format-alt": " <b>{:%a • %d.%m.%Y}</b>",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
     "custom/powermenu": {
-        "format": "",
+        "format": "",
         "on-click": "wlogout",
         "tooltip": false
     }
