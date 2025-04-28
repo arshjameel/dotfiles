@@ -5,20 +5,28 @@
     border-radius: 0;
 }
 
+#window {
+    background-color: transparent;
+    color: #282828;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+
 window#waybar {
-    background: #282828;
-    color: #fbf1c7;
+    background: #fbf1c7;
+    color: #282828;
+    border: 2px solid #282828;
 }
 
 #workspaces button {
     padding: 0 5px;
     background: transparent;
-    color: #fbf1c7;
-    border-bottom: 2px solid #282828;
+    color: #282828;
 }
 
 #workspaces button.active {
-    border-bottom: 2px solid #fe8019;
+    color: #282828;
 }
 
 #workspaces button.urgent {
@@ -28,7 +36,7 @@ window#waybar {
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
-    background: #282828;
+    background: #fbf1c7;
 }
 
 #pulseaudio,
@@ -42,46 +50,40 @@ window#waybar {
     padding: 0 10px;
 }
 
+/* #workspaces,
+#backlight,
 #pulseaudio,
 #network,
 #cpu,
 #memory,
 #battery,
 #clock {
-    border-bottom: 2px solid #fe8019;
-}
+    border-top: 2px solid #282828;
+    border-bottom: 2px solid #282828;
+} */
 
-/* Module-specific colors */
+#workspaces,
+#backlight,
 #custom-powermenu {
-    color: #fe8019;
+    border-left: 2px solid #282828;
 }
 
-#backlight {
-    color: #fe8019;
-}
-
-#pulseaudio {
-    color: #fe8019;
-}
-
-#network {
-    color: #fe8019;
-}
-
-#cpu {
-    color: #fe8019;
-}
-
-#memory {
-    color: #fe8019;
-}
-
-#battery {
-    color: #fe8019;
-}
-
+#custom-powermenu,
+#workspaces,
+#network,
+#battery,
 #clock {
-    color: #fe8019;
+    border-right: 2px solid #282828;
+}
+
+#backlight,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#battery,
+#clock {
+    color: #282828;
 }
 
 /* Progress bars for volume and backlight */

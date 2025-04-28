@@ -1,55 +1,87 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 26,
+    "height": 30,
     "width": "100%",
     "margin-left": 0,
     "margin-right": 0,
-    "spacing": 10,
-    "modules-left": ["custom/powermenu", "backlight", "pulseaudio"],
+    "spacing": 0,
+    "modules-left": ["custom/powermenu", "hyprland/window"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["network", "cpu", "memory", "battery", "clock"],
+    "modules-right": ["backlight", "pulseaudio", "cpu", "memory", "network", "battery", "clock"],
+
+    "custom/powermenu": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "wlogout"
+    },
+
+    "hyprland/window": {
+        "format": " [{class}]",
+        "max-length": 30,
+        "separate-outputs": true,
+        "icon": false
+    },
 
     "hyprland/workspaces": {
-        "all-outputs": false,
+        "all-outputs": true,
         "active-only": "false",
-        "format": "{name}",
-        "on-click": "activate"
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "active": "<span font='12'>■</span>",
+            "persistent": "<span font='15'>⧇</span>",
+            "empty": "<span font='12'>□</span>",
+            "visible": "<span font='12'>□</span>",
+            "default": "<span font='12'>□</span>",
+        },
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
     },
 
     "backlight": {
-        "format": "󰖨 <b>{percent}%</b>",
+        "format": "󰖨 ",
         "on-scroll-up": "brightnessctl set +10%",
-        "on-scroll-down": "brightnessctl set 10%-"
+        "on-scroll-down": "brightnessctl set 10%-",
+        "tooltip-format": "{percent}%"
     },
 
     "pulseaudio": {
-        "format": "墳 <b>{volume}%</b>",
+        "format": "墳",
         "format-muted": "婢 <b>muted</b>",
-        "on-click": "pavucontrol"
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "on-click": "pavucontrol",
+        "tooltip-format": "{volume}%"
     },
 
     "network": {
-        "format-wifi": "󰤨 <b>{essid}</b>",
+        "format-wifi": "󰤨 ",
         "format-ethernet": "󪥈 <b>Ethernet</b>",
         "format-disconnected": "󰤭 disconnected",
         "tooltip": true,
-        "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
+        //"tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "{essid}"
     },
 
     "cpu": {
-        "format": " <b>{usage}%</b>",
+        "format": "",
         "interval": 5,
         "max-length": 10,
         "on-click": "",
-        "tooltip": false
+        "tooltip": true
     },
 
     "memory": {
-        "format": " <b>{used}G</b>",
+        "format": " ",
         "interval": 5,
         "max-length": 10,
-        "tooltip": false
+        "tooltip": true
     },
 
     "battery": {
@@ -64,14 +96,8 @@
     },
 
     "clock": {
-        "format": " <b>{:%I:%M %p}</b>",
-        "format-alt": " <b>{:%a • %d.%m.%Y}</b>",
+        "format": " <b>{:%I:%M %p}</b>",
+        "format-alt": " <b>{:%a • %d.%m.%Y}</b>",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-
-    "custom/powermenu": {
-        "format": "",
-        "on-click": "wlogout",
-        "tooltip": false
     }
 }
