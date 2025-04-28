@@ -1,0 +1,71 @@
+* {
+    font-family: monospace;
+    font-size: 14px;
+    background-image: none;
+    box-shadow: none;
+}
+    
+window {
+    background-color: rgba(251, 241, 199, 0.8);
+}
+
+button {
+    border: 2px solid #282828;
+    border-radius: 0;
+    border-color: #282828;
+    text-decoration-color: #fbf1c7;
+    color: #fbf1c7;
+    background-color: #282828;
+    border-style: solid;
+    border-width: 1px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    background-clip: border-box;
+    margin: 10px;
+    box-shadow: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+/* Separate styling for focus and active states */
+button:focus, button:active {
+    /* Your focus/active styles here */
+    background-color: #fbf1c7;
+    border-color: #282828;
+    outline-style: none;
+    color: #282828;
+    box-shadow: 4px 4px 0 #282828;
+}
+
+/* Specific styling for hover state */
+button:hover {
+    background-color: #fbf1c7;
+    border-color: #282828;
+    color: #282828;
+    box-shadow: 4px 4px 0 #282828;
+    /* You can add additional hover-specific properties here */
+    
+}
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}

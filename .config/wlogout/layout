@@ -1,0 +1,18 @@
+{
+    "label" : "logout",
+    "action" : "pkill -u $USER",
+    "text" : "Logout",
+    "keybind" : "e"
+}
+{
+    "label" : "reboot",
+    "action" : "reboot",
+    "text" : "Reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "shutdown",
+    "action" : "shutdown now",
+    "text" : "Shutdown",
+    "keybind" : "s"
+}
