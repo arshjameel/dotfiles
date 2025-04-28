@@ -23,10 +23,11 @@ export PF_COL3=3 # user/host name
 
 # counter to open pfetch in first terminal window
 
-LIVE_COUNTER=$(ps a | awk '{print $2}' | grep -vi -e "tty*" -e "?" | uniq | wc -l);
-if [ $LIVE_COUNTER -eq 1 ]; then
-     pfetch
+LIVE_COUNTER=$(ps a | awk '{print $2}' | grep -vi -e "tty*" -e "?" | uniq | wc -l)
+if [ $LIVE_COUNTER -eq 1 ] && [ "$TERM" = "xterm-kitty" ]; then
+     nitch
 fi
+
 
 ###------ ALIASES ------###
 
