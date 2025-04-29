@@ -8,7 +8,6 @@
 #window {
     background-color: transparent;
     color: #282828;
-    font-family: monospace;
     font-weight: bold;
 }
 
@@ -16,7 +15,24 @@
 window#waybar {
     background: #fbf1c7;
     color: #282828;
-    border: 2px solid #282828;
+    border-top: 3px solid #282828;
+    border-bottom: 3px solid #282828;
+}
+
+window#waybar:hover {
+    background: red;
+}
+
+tooltip {
+    background: #ebdbb2;
+    border: 3px solid #282828;
+}
+
+tooltip label {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 10px;
+    font-weight: 300;
+    color: #282828;
 }
 
 #workspaces button {
@@ -36,9 +52,9 @@ window#waybar {
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
-    background: #fbf1c7;
-    border-top: 2px solid #282828;
-    border-bottom: 2px solid #282828;
+    /*background: #ebdbb2;
+    border-top: 3px solid #282828;
+    border-bottom: 3px solid #282828;*/
 }
 
 #pulseaudio,
@@ -52,28 +68,45 @@ window#waybar {
     padding: 0 10px;
 }
 
+#custom-powermenu,
 #workspaces,
-#backlight,
-#custom-powermenu {
-    border-left: 2px solid #282828;
+#cpu,
+#network {
+    border-left: 3px solid #282828;
 }
 
 #custom-powermenu,
 #workspaces,
-#network,
+#bluetooth,
 #battery,
 #clock {
-    border-right: 2px solid #282828;
+    border-right: 3px solid #282828;
 }
 
+#custom-powermenu,
 #backlight,
 #pulseaudio,
 #network,
+#bluetooth,
 #cpu,
 #memory,
 #battery,
 #clock {
     color: #282828;
+}
+
+#custom-powermenu:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#clock:hover {
+    background: #ebdbb2;
+    border-top: 3px solid #282828;
+    border-bottom: 3px solid #282828;
 }
 
 /* Progress bars for volume and backlight */
