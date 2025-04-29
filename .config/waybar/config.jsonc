@@ -8,7 +8,7 @@
     "spacing": 0,
     "modules-left": ["custom/powermenu", "hyprland/window"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["backlight", "pulseaudio", "cpu", "memory", "network", "battery", "clock"],
+    "modules-right": ["network", "bluetooth", "backlight", "pulseaudio", "battery", "clock"],
 
     "custom/powermenu": {
         "format": " ",
@@ -33,7 +33,7 @@
             "persistent": "<span font='15'>⧇</span>",
             "empty": "<span font='12'>□</span>",
             "visible": "<span font='12'>□</span>",
-            "default": "<span font='12'>□</span>"
+            "default": "<span font='15'>⧇</span>"
         },
         "persistent_workspaces": {
             "1": [],
@@ -44,44 +44,55 @@
         }
     },
 
+    "cpu": {
+      "format": "",
+      "interval": 5,
+      "max-length": 10,
+      "on-click": "",
+      "tooltip": true
+    },
+
+    "memory": {
+      "format": " ",
+      "interval": 5,
+      "max-length": 10,
+      "tooltip": true
+    },
+
+    "network": {
+      "format-wifi": "󰤨 ",
+      "format-ethernet": "󪥈 <b>Ethernet</b>",
+      "format-disconnected": "󰤭 disconnected ",
+      "on-click": "nm-connection-editor",
+      "tooltip": true,
+        //"tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "{essid}"
+    },
+
+    "bluetooth": {
+      "format-on": "  󰂯0  ", // on and 0 devices connected
+      "format-connected": "  󰂯  ", // on and some device(s) connected
+      "format-disabled": "  󰂲  ", // bluetooth off
+      "on-click": "blueman-manager",
+      "tooltip": true,
+      "tooltip-format-connected": "{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+
     "backlight": {
-        "format": "󰖨 ",
+        "format": "󰃠 <b>{percent}%</b>",
         "on-scroll-up": "brightnessctl set +10%",
         "on-scroll-down": "brightnessctl set 10%-",
         "tooltip-format": "{percent}%"
     },
 
     "pulseaudio": {
-        "format": "墳",
+        "format": "墳 <b>{volume}%</b>",
         "format-muted": "婢 <b>muted</b>",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
         "on-click": "pavucontrol",
         "tooltip-format": "{volume}%"
-    },
-
-    "network": {
-        "format-wifi": "󰤨 ",
-        "format-ethernet": "󪥈 <b>Ethernet</b>",
-        "format-disconnected": "󰤭 disconnected",
-        "tooltip": true,
-        //"tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-        "tooltip-format": "{essid}"
-    },
-
-    "cpu": {
-        "format": "",
-        "interval": 5,
-        "max-length": 10,
-        "on-click": "",
-        "tooltip": true
-    },
-
-    "memory": {
-        "format": " ",
-        "interval": 5,
-        "max-length": 10,
-        "tooltip": true
     },
 
     "battery": {
@@ -98,6 +109,11 @@
     "clock": {
         "format": " <b>{:%I:%M %p}</b>",
         "format-alt": " <b>{:%a • %d.%m.%Y}</b>",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "tooltip-format": "<small>{calendar}</small>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col"  : 4,
+            //"weeks-pos"     : "right",
+        }
     }
 }
