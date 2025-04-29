@@ -37,6 +37,8 @@ window#waybar {
     box-shadow: inherit;
     text-shadow: inherit;
     background: #fbf1c7;
+    border-top: 2px solid #282828;
+    border-bottom: 2px solid #282828;
 }
 
 #pulseaudio,
@@ -49,18 +51,6 @@ window#waybar {
 #custom-powermenu {
     padding: 0 10px;
 }
-
-/* #workspaces,
-#backlight,
-#pulseaudio,
-#network,
-#cpu,
-#memory,
-#battery,
-#clock {
-    border-top: 2px solid #282828;
-    border-bottom: 2px solid #282828;
-} */
 
 #workspaces,
 #backlight,
