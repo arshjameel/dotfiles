@@ -33,7 +33,7 @@
             "persistent": "<span font='15'>⧇</span>",
             "empty": "<span font='12'>□</span>",
             "visible": "<span font='12'>□</span>",
-            "default": "<span font='12'>□</span>",
+            "default": "<span font='12'>□</span>"
         },
         "persistent_workspaces": {
             "1": [],
@@ -90,8 +90,8 @@
         "format-charging": "󰢝 {capacity}%",
         "interval": 30,
         "states": {
-            "warning": 30,
-            "critical": 15
+            "warning": 50,
+            "critical": 25
         }
     },
 
