@@ -22,14 +22,6 @@ export PF_COL1=4 # thing on left
 export PF_COL2=2 # thing on right 
 export PF_COL3=3 # user/host name
 
-# counter to open pfetch in first terminal window
-
-LIVE_COUNTER=$(ps a | awk '{print $2}' | grep -vi -e "tty*" -e "?" | uniq | wc -l)
-if [ $LIVE_COUNTER -eq 1 ] && [ "$TERM" = "xterm-kitty" ]; then
-     nitch
-fi
-
-
 ###------ ALIASES ------###
 
 alias bluej='snap run bluej'
@@ -41,6 +33,52 @@ alias zl='zellij'
 # export PATH="$PATH:/usr/local/bin/go"
 #
 ###------ SCRIPTS ------ ###
+
+# Start swayidle if running under niri and not already running
+# if [ "$NIRI_SOCKET" ] && ! pgrep -x swayidle > /dev/null; then
+#     swayidle -w timeout 60 'swaylock -f' before-sleep 'swaylock -f' &
+# fi
+
+# always open the last used zellij session by default when opening a terminal 
+# ZELLIJ_LOCK="/tmp/zellij-autostart.lock"
+#
+# _lock_is_stale() {
+#     local pid
+#     pid=$(cat "$ZELLIJ_LOCK" 2>/dev/null)
+#     # Stale if file is empty or PID is no longer running
+#     [[ -z "$pid" ]] || ! kill -0 "$pid" 2>/dev/null
+# }
+#
+# if [[ -z "$ZELLIJ" ]] && [[ -t 0 ]]; then
+#     if [[ ! -f "$ZELLIJ_LOCK" ]] || _lock_is_stale; then
+#         # Write our PID into the lock
+#         echo $$ > "$ZELLIJ_LOCK"
+#
+#         trap "rm -f '$ZELLIJ_LOCK'" EXIT
+#
+#         LAST_SESSION=$(zellij ls -s 2>/dev/null | tail -n 1 | awk '{print $1}')
+#
+#         if [[ -n "$LAST_SESSION" ]]; then
+#             exec zellij attach "$LAST_SESSION"
+#         else
+#             exec zellij
+#         fi
+#     fi
+# fi
+
+# counter to open fetch info in the first terminal window
+#
+LIVE_COUNTER=$(ps a | awk '{print $2}' | grep -vi -e "tty*" -e "?" | uniq | wc -l)
+if [ $LIVE_COUNTER -eq 1 ] && [ "$TERM" = "xterm-kitty" ]; then
+     fastfetch --config fedora
+fi
+
+# script to open fastfetch on every normal terminal after the first zellij terminal
+#
+# if [[ -z "$ZELLIJ" ]] && [[ -f "$ZELLIJ_LOCK" ]] && ! _lock_is_stale; then
+#     fastfetch --config fedora
+# fi
+
 #/home/akira/emsdk/emsdk_env.sh
 export DOCKER_CLI_EXPERIMENTAL=enabled
 export SPOTIPY_CLIENT_ID='df05c5701d624d628de54068da4dd7fd'
@@ -75,5 +113,6 @@ esac
 
 # Added by LM Studio CLI tool (lms)
 export PATH="$PATH:/home/akira/.lmstudio/bin"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
