@@ -53,4 +53,5 @@ picom -fb &
 nitrogen --restore &
 lxsession &
 xsetroot -cursor_name left_ptr
+xset b off
 exec i3

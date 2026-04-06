@@ -27,7 +27,7 @@ require("gruvbox").setup({
 
 function themeColors(color)
 	color = color or "gruvbox"
-	vim.o.background = "light" -- "light" or "dark"
+	vim.o.background = "dark" -- "light" or "dark"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
