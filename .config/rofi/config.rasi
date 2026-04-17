@@ -9,26 +9,27 @@ configuration {
 @theme "/dev/null"
 
 * {
-	fg:				                   #282828;
-	bg:				                   #fbf1c7;
-	button:				               #fe8019;
-	background-color:		            	@bg;
-	text-color:			                	@bg;
+  fg:                 #2E3440;    /* nord0 - dark background */
+  bg:                 #D8DEE9;    /* nord4 - light foreground */
+  button:             #88C0D0;    /* nord8 - frost blue accent */
+  background-color:   @bg;
+  text-color:         @bg;
 }
 
 window {
 	transparency:                   		"real";
 	width:			    					30%;
 	height: 								70%;
-	location:    			                south;
-    anchor:                 		        south;
+	location:    			                south west;
+    anchor:                 		        south west;
 	fullscreen:			                    false;
-    x-offset:           		            -672px;
+    x-offset:           		            0px;
 	y-offset:                   		    0px;
 	enabled:                     			true;
-    border-radius:               			20px;
+    border-radius:               			5px;
     cursor:                      			"default";
-	border-radius: 							0;
+	border: 							2px solid;
+  border-color:         @button;
 }
 
 prompt { enabled: false; }
@@ -60,7 +61,9 @@ entry {
 	background-color: 						@fg;
 	expand:                         		true;
 	padding:                        		1.5%;
-	border-radius:							0;
+	border-radius:							5px;
+	border: 							2px solid;
+  border-color:         @button;
 }
 
 listbox {
@@ -69,6 +72,9 @@ listbox {
     background-color:            			transparent;
     orientation:                 			vertical;
     children:                    			[ "listview" ];
+	  border-radius:							5px;
+	  border: 							2px solid;
+    border-color:         @button;
 }
 
 listview {
