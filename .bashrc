@@ -116,3 +116,4 @@ export PATH="$PATH:/home/akira/.lmstudio/bin"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+source ~/Xilinx/Vivado/2023.1/settings64.sh
