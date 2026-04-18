@@ -8,6 +8,7 @@ sudo pacman -S git stow
 ```
 
 Theme/Colorscheme: [Nord](https://github.com/nordtheme) 
+
 Compositor: [Niri](https://github.com/niri-wm/niri)
 
 ## Screenshots
