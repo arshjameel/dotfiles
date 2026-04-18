@@ -1,107 +1,116 @@
 configuration {
-	modi:				                    "drun";
-	font:				                    "JetBrainsMono Nerd Font 12";
-	display-drun: 			           		"";
-	drun-display-format:			        "{name}";
-	sidebar-mode: 			        	    true;
+	modi:				              "drun";
+	font:				              "JetBrainsMono Nerd Font 13";
+	display-drun: 			      "";
+	drun-display-format:			"{name}";
+	sidebar-mode: 			      true;
 }
 
 @theme "/dev/null"
 
 * {
-  fg:                 #2E3440;    /* nord0 - dark background */
-  bg:                 #D8DEE9;    /* nord4 - light foreground */
-  button:             #88C0D0;    /* nord8 - frost blue accent */
-  background-color:   @bg;
-  text-color:         @bg;
+  fg:                     #2E3440;    /* nord0 - dark background */
+  bg:                     #D8DEE9;    /* nord4 - light foreground */
+  bg2:                    #4c566a;
+  button:                 #88C0D0;    /* nord8 - frost blue accent */
+  background-color:         @bg;
+  text-color:               @bg;
 }
 
 window {
-	transparency:                   		"real";
+	transparency:             "real";
 	width:			    					30%;
-	height: 								70%;
-	location:    			                south west;
-    anchor:                 		        south west;
-	fullscreen:			                    false;
-    x-offset:           		            0px;
-	y-offset:                   		    0px;
-	enabled:                     			true;
-    border-radius:               			5px;
-    cursor:                      			"default";
-	border: 							2px solid;
-  border-color:         @button;
+	height: 								  70%;
+	location:    			        south west;
+    anchor:                   south west;
+	fullscreen:			          false;
+    x-offset:           		  0px;
+	y-offset:                 0px;
+	enabled:                  true;
+    border-radius:            5px;
+    cursor:                   "default";
+	border: 							    2px solid;
+  border-color:             @button;
 }
 
 prompt { enabled: false; }
 
 mainbox {
-    enabled:		                     	true;
-    spacing:                     			0%;
-	padding:                        		2% 1% 2% 1%;
-	margin: 								0;
-    background-color:			            @fg;
-    orientation:                			vertical;
-    children:                    			[ "inputbar", "listbox" ];
+  enabled:		              true;
+  spacing:                  0%;
+	padding:                  3% 2% 3% 2%;
+	margin: 								  0;
+    background-color:			    @fg;
+    orientation:              vertical;
+    children:                 [ "inputbar", "listbox" ];
 }
 
 inputbar {
 	children: 								[ prompt, entry ];
-	background-color:               		@fg;
-	text-color:                     		@bg;
-	expand:                         		false;
-	border:									0px 0px solid;
-	border-radius:                  		6px;
-	padding:                        		8px;
-	children:                    			[ "entry" ];
+	background-color:         @fg;
+	text-color:               @bg;
+	expand:                   false;
+	border:									  0px 0px solid;
+	border-radius:            6px;
+	padding:                  10px 4px 25px 4px;
+	children:                 [ "entry" ];
 }
 
 entry {
 	placeholder:							"Search";
-	placeholder-color:              		@bg;
-	background-color: 						@fg;
-	expand:                         		true;
-	padding:                        		1.5%;
-	border-radius:							5px;
-	border: 							2px solid;
-  border-color:         @button;
+	placeholder-color:        @bg;
+	background-color: 				@fg;
+	expand:                   true;
+	padding:                  1.5%;
+	border-radius:						5px;
+	border: 							    2px solid;
+  border-color:             @button;
 }
 
 listbox {
-    spacing:                   			  	10px;
-    padding:                     			0px 2px 16px 2px;
-    background-color:            			transparent;
-    orientation:                 			vertical;
-    children:                    			[ "listview" ];
-	  border-radius:							5px;
-	  border: 							2px solid;
-    border-color:         @button;
+  spacing:                  10px;
+  padding:                  0px 0px 0px 0px;
+  background-color:         @bg;
+  orientation:              vertical;
+  children:                 [ "listview" ];
+	border-radius:					  5px;
+	border: 							    1px solid;
+  border-color:             @fg;
 }
 
 listview {
-	columns:                        		1;
-	lines:	                        		5;
-	cycle:                          		false;
-	dynamic:                        		true;
-	layout:                         		vertical;
+	columns:                  1;
+	lines:	                  5;
+	cycle:                    false;
+	dynamic:                  true;
+	layout:                   vertical;
+  background-color:         @fg;
 }
 
 element {
-	orientation:                  		  	vertical;
-	border-radius:                  		0%;
-	padding:                        		1.6% 0% 1.6% 0%;
+	orientation:              vertical;
+  border:                   0px solid;
+	border-radius:            5px;
+  background-color:         @bg2;
+  margin: 3px;
+	padding:                  1.6% 0% 1.6% 0%;
 }
 
 element-text {
-	expand:                         		true;
-	vertical-align:                 		0.5;
-	margin:                         		0.5% 3% 0% 3%;
-	background-color:               		@bg;
-  	text-color:                     		@fg;
+	expand:                   true;
+	vertical-align:           0.5;
+	margin:                   0.5% 3% 0% 2%;
+	background-color:         transparent;
+  	text-color:               @bg;
+}
+
+element-text selected {
+  text-color:               @fg;
 }
 
 element selected {
-	background-color:               		@bg;
-	border-radius:                  		0px;
-	border: 								3px 0px 3px 0px solid;
-	border-color: 							@fg;
+	border-radius:            5px;
+	border: 								  3px 0px 3px 0px solid;
+	border-color: 						@fg;
+	background-color:         @button;
 }
