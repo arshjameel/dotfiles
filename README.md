@@ -7,7 +7,7 @@ maintained by [GNU Stow](https://www.gnu.org/software/stow/)
 sudo pacman -S git stow
 ```
 
-Theme/Colorscheme: [Nord](https://github.com/nordtheme)
+Theme/Colorscheme: [Nord](https://github.com/nordtheme) 
 Compositor: [Niri](https://github.com/niri-wm/niri)
 
 ## Screenshots
